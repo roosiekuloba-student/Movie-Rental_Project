@@ -14,7 +14,7 @@ class MovieGenre(models.Model):
 
 class Movie(models.Model):
     genre = models.ForeignKey(MovieGenre, on_delete=models.RESTRICT)
-    movie_name = models.CharField()
+    movie_name = models.CharField(max_length=225)
     movie_rating = models.CharField(max_length=10, null=True)
     launch_date = models.DateTimeField('date launched', null=True)
     price = models.IntegerField(default=0)
