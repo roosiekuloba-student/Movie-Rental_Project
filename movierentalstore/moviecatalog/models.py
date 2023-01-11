@@ -5,8 +5,7 @@ from django.utils import timezone
 
 
 class MovieGenre(models.Model):
-    movie_genre = models.CharField(max_length=50, unique=True,
-                                  help_text='Enter a movie genre (e.g. Action)')
+    movie_genre = models.CharField(max_length=50, unique=True, help_text='Enter a movie genre (e.g. Action)')
 
     def __str__(self):
         return self.movie_genre
@@ -28,4 +27,4 @@ class Movie(models.Model):
     sku = models.CharField(max_length=5, default=0000, null=False)
 
     def __str__(self):
-        return f'{self.make} {self.movie_name} {self.sale_currency} {self.price}'
+        return f'{self.genre} {self.movie_name} {self.sale_currency} {self.price}'
