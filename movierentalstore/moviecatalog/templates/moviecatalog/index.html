@@ -1,0 +1,13 @@
+<h1>Movie-Rental Store 2022 Movies</h1>
+{% if movie_list %}
+<ul>
+    {% for movie in movie_list %}
+    <li>
+        <a href="/movies/{{ movie.id }}/">{{ movie.genre}} {{ movie.movie_name}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No movie available currently for rent</p>
+{% endif %}
+<p>There are {{ num_movies }} movies in our catalog currently available for rent</p>
